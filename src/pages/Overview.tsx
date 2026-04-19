@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { patients, returns, wasteAlerts } from "@/data/demo";
-import { AlertTriangle, PackageOpen, Pill, TrendingDown, Users, ChevronRight, Activity } from "lucide-react";
+import { AlertTriangle, PackageOpen, Pill, TrendingDown, Users, ChevronRight, Activity, Smartphone, Repeat, Stethoscope } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SeverityBadge } from "@/components/SeverityBadge";
 import { format, formatDistanceToNow } from "date-fns";
@@ -44,6 +44,31 @@ const Overview = () => {
           <KpiCard icon={Activity} label="Missed collections" value={missedCollections.toString()} hint="Last 14 days" tone="warning" />
           <KpiCard icon={TrendingDown} label="Estimated waste" value={`£${totalWaste}`} hint="This month" tone="success" />
         </div>
+
+        {/* Feedback loop / EHR banner */}
+        <Card className="p-5 shadow-card bg-gradient-to-br from-primary-soft to-accent-soft border-primary/15">
+          <div className="flex items-start gap-4 flex-wrap">
+            <div className="flex items-center gap-3 flex-1 min-w-[260px]">
+              <div className="w-10 h-10 rounded-md bg-primary text-primary-foreground flex items-center justify-center shrink-0">
+                <Repeat className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="text-xs uppercase tracking-wide font-semibold text-primary">Closed feedback loop</div>
+                <div className="text-sm text-foreground/85 mt-0.5">
+                  Prescribing → dispensing → patient use → returns. Alerts flow back into your EHR.
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-2 flex-wrap">
+              <Link to="/patient-app" className="bg-card border border-border px-3 py-2 rounded-md text-xs font-medium hover:bg-muted flex items-center gap-1.5">
+                <Smartphone className="w-3.5 h-3.5 text-primary" /> Patient app preview
+              </Link>
+              <div className="bg-card border border-border px-3 py-2 rounded-md text-xs font-medium flex items-center gap-1.5">
+                <Stethoscope className="w-3.5 h-3.5 text-success" /> EHR sync active
+              </div>
+            </div>
+          </div>
+        </Card>
 
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Top alerts */}

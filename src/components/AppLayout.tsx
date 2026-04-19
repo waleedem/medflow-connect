@@ -1,4 +1,4 @@
-import { Pill, LayoutDashboard, Users, AlertTriangle, PackageOpen, Settings, LifeBuoy } from "lucide-react";
+import { Pill, LayoutDashboard, Users, AlertTriangle, PackageOpen, Settings, LifeBuoy, Smartphone } from "lucide-react";
 import { NavLink, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { wasteAlerts } from "@/data/demo";
@@ -8,6 +8,7 @@ const nav = [
   { to: "/patients", label: "Patients", icon: Users },
   { to: "/alerts", label: "Waste alerts", icon: AlertTriangle, badge: wasteAlerts.filter(a => a.severity === "critical" || a.severity === "high").length },
   { to: "/returns", label: "Returns log", icon: PackageOpen },
+  { to: "/patient-app", label: "Patient app", icon: Smartphone },
 ];
 
 export const AppLayout = ({ children }: { children: React.ReactNode }) => {

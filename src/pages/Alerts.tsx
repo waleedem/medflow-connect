@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { wasteAlerts, type AlertSeverity } from "@/data/demo";
 import { Link } from "react-router-dom";
 import { SeverityBadge } from "@/components/SeverityBadge";
-import { AlertTriangle, ChevronRight, Filter } from "lucide-react";
+import { AlertTriangle, ChevronRight, Filter, Stethoscope } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { cn } from "@/lib/utils";
 
@@ -78,6 +78,10 @@ const Alerts = () => {
                     <div className="mt-3 bg-info-soft border border-info/15 rounded-md px-3 py-2 text-sm">
                       <span className="font-semibold text-info">Recommended action: </span>
                       <span className="text-foreground/85">{a.recommendedAction}</span>
+                    </div>
+                    <div className="mt-2 flex items-center gap-1.5 text-xs text-success">
+                      <Stethoscope className="w-3.5 h-3.5" />
+                      <span>Pushed to EHR · visible in prescriber workflow</span>
                     </div>
                   </div>
                 </div>
