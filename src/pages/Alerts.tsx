@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { wasteAlerts, type AlertSeverity } from "@/data/demo";
 import { Link } from "react-router-dom";
 import { SeverityBadge } from "@/components/SeverityBadge";
-import { AlertTriangle, ChevronRight, Filter } from "lucide-react";
+import { AlertTriangle, ChevronRight, Filter, Stethoscope } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { cn } from "@/lib/utils";
 
