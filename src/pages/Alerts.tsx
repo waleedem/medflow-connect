@@ -79,6 +79,10 @@ const Alerts = () => {
                       <span className="font-semibold text-info">Recommended action: </span>
                       <span className="text-foreground/85">{a.recommendedAction}</span>
                     </div>
+                    <div className="mt-2 flex items-center gap-1.5 text-xs text-success">
+                      <Stethoscope className="w-3.5 h-3.5" />
+                      <span>Pushed to EHR · visible in prescriber workflow</span>
+                    </div>
                   </div>
                 </div>
                 <div className="text-right shrink-0">
