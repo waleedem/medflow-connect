@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { patients, returns, wasteAlerts } from "@/data/demo";
-import { AlertTriangle, PackageOpen, Pill, TrendingDown, Users, ChevronRight, Activity } from "lucide-react";
+import { AlertTriangle, PackageOpen, Pill, TrendingDown, Users, ChevronRight, Activity, Smartphone, Repeat, Stethoscope } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SeverityBadge } from "@/components/SeverityBadge";
 import { format, formatDistanceToNow } from "date-fns";
